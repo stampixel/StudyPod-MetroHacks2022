@@ -9,7 +9,7 @@ class Notes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url_id = db.Column(db.String(128))
     title = db.Column(db.String(50))
-    content = db.Column(db.String(5000))
+    content = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
 
     public = db.Column(db.Boolean, default=True, nullable=False)

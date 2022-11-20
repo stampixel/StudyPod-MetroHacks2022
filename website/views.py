@@ -49,19 +49,19 @@ def edit_note():
         # try:
         if request.form['save'] == "Save":  # Saves to db
             title = request.form['title']
-            paste_content = request.form['paste_content']
-            if paste_content == "":
-                flash("Paste Something First!", category='error')
+            note_content = request.form['paste_content']
+            if note_content == "":
+                flash("Notes can't be left empty!", category='error')
                 return redirect(url_for('views.edit_note'))
 
             else:
                 if title == "":
-                    title = "New Paste"
+                    title = "New Note"
                 url_id = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(7))
-                note = Notes(url_id=url_id, title=title, content=paste_content, user_id=current_user.id)
+                note = Notes(url_id=url_id, title=title, content=note_content, user_id=current_user.id)
                 db.session.add(note)
                 db.session.commit()
-                flash('New Paste Created!', category='success')
+                flash('New Note Created!', category='success')
                 return redirect(url_for('views.main'))
         # except:
         #     flash("Something went wrong!", category='error')
@@ -129,14 +129,14 @@ def note_summary(id):
         flash('Must have over 50 chars in order to summarize properly.', category='error')
         return render_template('text_summary.html', note=note_to_summarize, user=current_user,
                                summary=note_to_summarize.content)
-    elif len(note_to_summarize.content) > 3000:
-        flash('Text is to over the char limit (5000).', category='error')
+    elif len(note_to_summarize.content) > 10000:
+        flash('Text is to over the char limit (10 000).', category='error')
         return render_template('text_summary.html', note=note_to_summarize, user=current_user,
                                summary=note_to_summarize.content)
     else:
-        YOUR_API_KEY = "API KEY GOES HERE"
+        YOUR_API_KEY = "KEY GOES HERE"
 
-        long_text = note_to_summarize.content
+        long_text = ''.join([i if ord(i) < 128 else ' ' for i in note_to_summarize.content])
 
         out = requests.post(
             "https://api.ai21.com/studio/v1/experimental/summarize",

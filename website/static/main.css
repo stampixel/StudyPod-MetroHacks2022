@@ -273,3 +273,19 @@ iframe {
     box-shadow: 0 0 transparent, 0 0 #0000, 0 0 transparent, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
 }
+
+
+#popup {
+    display: none;
+    background-color: white;
+    width: 15vw;
+    height: 15vh;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    border: 8px dimgray;
+    border: solid;
+    line-height: 10vh;
+    position: relative;
+
+}

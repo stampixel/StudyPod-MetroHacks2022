@@ -57,6 +57,8 @@ body {
     background-color: var(--dark);
     resize: vertical;
     max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .bar {
