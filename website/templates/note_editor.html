@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='note_editor.css') }}">
+    <title>Snippets Editor</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="app">
+        <form action="" method="POST">
+            <div class="wrapper">
+                <input class="note-title" type="text" name="title" placeholder="Note Title...">
+                <textarea id="snippet" placeholder="Your notes here..." type="text" name="paste_content"
+                          required></textarea><br>
+
+                <div class="bar"></div>
+
+                <input class="save-btn" type="submit" name="save" value="Save">
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        const textarea = document.querySelector('textarea')
+
+        textarea.addEventListener('keydown', (e) => {
+            if (e.keyCode === 9) {
+                e.preventDefault()
+
+                textarea.setRangeText(
+                    '    ',
+                    textarea.selectionStart,
+                    textarea.selectionStart,
+                    'end'
+                )
+            }
+        })
+    </script>
+
+{% endblock %}

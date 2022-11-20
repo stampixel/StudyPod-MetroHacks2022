@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='note_editor.css') }}">
+    <title>Note Editor</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="app">
+        <form action="" method="POST">
+            <div class="wrapper">
+                <input class="note-title child" type="text" name="title" placeholder="{{ note.title }}">
+                <textarea id="snippet" placeholder="Your paste here..." type="text" name="paste_content"
+                          required>{{ note.content }}</textarea><br>
+
+                <div class="bar child"></div>
+
+
+                <input class="save-btn child" type="submit" name="save" value="Save">
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}

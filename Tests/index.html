@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Study Room</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="main.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<div class="root">
+    <main>
+
+        <!-- TO DO LIST COLUMN -->
+        <div id="left-div">
+            <div class="left container">
+                <div class="todo-app">
+                    <div class="todo">
+                        <h2>To do</h2>
+                        <div class="todo-item">
+                            <a href="/delete/{{ task.id }} ">
+                                <button class="delete-task-btn">X</button>
+                            </a>
+                            <p class="check-list-box">hello worlfsdf asdfasdf fsadfasdf sadfsdfasdfasdd</p>
+                        </div>
+                        <div class="add-todo">
+                            <div class="form">
+                                <form method="POST">
+                                    <input type="text" name="task" id="task" placeholder="New Task...">
+                                    <button class="todo-btn" type="submit" name="add_task">Add New Task</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CENTER NOTES -->
+        <div id="center-div">
+            <div class="middle container">
+                <div class="app">
+                    <div class="snippet">
+                        <p class="snippet-title">titel</p>
+                        <a href="{{ snippet.url_id }}">sfdgfg</a>
+
+                        <div class="buttons">
+                            <a href="/delete/{{ snippet.id }} ">
+                                <button class="del-btn">Delete</button>
+                            </a>
+                            <a href="/edit/{{ snippet.id }}">
+                                <button class="edit-btn">Edit</button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <form method="POST">
+                            <input class="add-snippet-button" type="submit" name="add_snippet" value="Add Code Snippet">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+        <div id="right-div">
+            <div class="right container">
+                <div class="top container">
+                    <div class="video-player">
+                        <iframe id="ytplayer" type="text/html" width="350" height="250"
+                                src="https://www.youtube.com/embed/jfKfPfyJRdk?&autoplay=1" frameborder="0" fs="0"
+                                autoplay=0></iframe>
+                    </div>
+                </div>
+
+                <div class="top">
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

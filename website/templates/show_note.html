@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='text_summary.css') }}">
+    <title>{{ note.title }}</title>
+    <link rel="icon" href="https://img.icons8.com/officel/40/000000/copyright.png">
+</head>
+
+<body>
+<div class="app">
+    <div class="wrapper">
+        <div class="note-title">
+            <h4>{{ note.title }}</h4>
+        </div>
+
+        <div class="summary">
+            <p>{{ note.content }}</p>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="app">
+        <div class="app-wrapper">
+            <div id="head">
+                <h1>Study pod</h1>
+                <section class="home flex-center">
+                    <div class="resize-padding">
+                        <!--        <p class="welcome-ts="pattern-cross-dots-md">ext">-->
+                        <!--          &lt;code<span>bin</span>/&gt;-->
+                        <!--        </p><br>-->
+                        <p class="animate__fadeInUp">
+                            Your home for studying.
+                        </p>
+                    </div>
+            </div>
+            </section>
+            <br/>
+            <hr/>
+            <br/>
+            <div id="about">
+                <p>Study pod is an all-in-one studying solution for efficient studying and working on assignments. it
+                    comes with numerous features aimed at helping you study better, such as built-in lofi music, a to-do
+                    list tracker, note pages, and a AI powered summarizer for your notes. </p>
+                <img id="example" width="400vw" src="{{ url_for('static', filename='website.png') }}"
+                     alt="example image of study pod">
+            </div>
+
+            <div id="contact">
+                <h3>Contact:</h3>
+                <div id="contact-items">
+
+                    <a id="github" href="https://github.com"><img alt="github"
+                                                                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                                                                  width="100vw"></a>
+                    <a id="devpost" href="https://devpost.com/"><img
+                            src="https://logos-download.com/wp-content/uploads/2016/10/Devpost_logo.png" alt="devpost"
+                            width="250vw"></a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

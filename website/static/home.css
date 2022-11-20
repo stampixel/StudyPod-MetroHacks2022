@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --dark-navy: rgb(30, 35, 42);
+    --dark-navy-values: 30, 35, 42;
+    --dark-magenta: rgb(65, 54, 60);
+    --dark: rgb(45, 46, 58);
+    --light: rgb(230, 230, 230);
+    --grey: rgb(51, 51, 51);
+    --blue: rgb(82, 200, 246);
+    --yellow: rgb(0, 0, 0);
+    --orange: rgb(255, 106, 0);
+    --pink: rgb(250, 161, 161);
+    --kvacpurp: rgb(216, 97, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto Mono", monospace, sans-serif;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: poppins, serif;
+    background-color: #a0876a;
+    max-width: 1950px;
+}
+
+.app {
+    max-width: 965px;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.app-wrapper {
+    margin-top: 10%;
+}
+
+p {
+    color: snow;
+    text-align: center;
+    padding-right: 10px;
+    font-size: 1vw;
+}
+
+.animate__fadeInUp {
+    font-size: 1.7vw;
+}
+
+h1 {
+    color: snow;
+    font-size: 7vw;
+    text-align: center;
+}
+
+h3 {
+    color: snow;
+    font-size: 3vw;
+}
+
+#example {
+    border: 4px solid;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #ffff;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+    background: #151621;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+li, a, button, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+    color: #ffff;
+    text-decoration: none;
+}
+
+.root {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1950px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: rgba(36, 37, 42, 1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(36, 37, 55, 0.6);
+}
+
+/*LEFT COLUMN*/
+.left {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.middle {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.right {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/*LEFT COLUMN CHECKLIST*/
+.todo-app {
+    text-align: left;
+    width: 80%;
+    background: rgba(26, 28, 47, 0.5);
+    border-radius: 15px;
+    margin: 7vh auto;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 transparent, 0 0 #0000, 0 0 transparent, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 12px;
+}
+
+.todo-item {
+    margin-bottom: 5%;
+}
+
+.todo h2 {
+    font-size: 25px;
+    align-content: center;
+    margin-bottom: 7%;
+}
+
+.delete-task-btn {
+    margin-left: 10px;
+    font-size: 15px;
+    width: max-content;
+    padding: 5px;
+    border-style: none;
+    /*border-radius: 17px;*/
+    background-color: rgba(0, 0, 0, 0.247);
+    color: white;
+    transition: all 0.5s ease;
+    /*FIX THAT*/
+    top: 0;
+}
+
+.delete-task-btn:hover {
+    background-color: darkseagreen;
+    color: white;
+}
+
+.check-list-box {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 1vw;
+    inline-size: 70%;
+    overflow-wrap: break-word;
+}
+
+.add-todo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-todo button {
+    margin-left: 10px;
+    font-size: 15px;
+    width: max-content;
+    padding: 12px;
+    border-style: none;
+    border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.247);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+#task {
+    margin-left: 10px;
+    font-size: 15px;
+    width: max-content;
+    padding: 12px;
+    border-style: none;
+    border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.247);
+    color: white;
+    transition: all 0.5s ease;
+    margin-bottom: 5px;
+}
+
+/*MIDDLE COLUMN CSS*/
+
+.app {
+    width: 100%;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.snippet {
+    width: 100%;
+    margin-bottom: 40px;
+    border-color: #7e705a;
+    background: #534636;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.snippet-title {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.snippet a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #d0c8c6;
+    transition: all 0.4s ease;
+}
+
+.snippet a:hover {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons button {
+    margin-left: 10px;
+    font-size: 15px;
+    width: max-content;
+    padding: 12px;
+    border-style: none;
+    border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.247);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.882);
+    cursor: pointer;
+}
+
+.buttons .del-btn {
+    border: 2.2px solid crimson;
+}
+
+.buttons .del-btn:hover {
+    background-color: crimson;
+}
+
+.buttons .edit-btn {
+    border: 2.2px solid limegreen;
+}
+
+.buttons .edit-btn:hover {
+    background-color: limegreen;
+}
+
+.add-snippet-button {
+    padding: 15px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.add-snippet-button:hover {
+    color: black;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.top {
+    float: top;
+}
+
+/* RIGHT COLUMN CSS */
+.video-player {
+    margin-top: 7vh;
+}
+
+iframe {
+    /*margin-top: 20px;*/
+    border-radius: 10px;
+
+}

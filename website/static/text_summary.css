@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --dark-navy: rgb(48, 56, 67);
+    --dark-navy-values: 30, 35, 42;
+    --dark-magenta: rgb(65, 54, 60);
+    --light: rgb(230, 230, 230);
+    --dark: rgb(45, 46, 58);
+    --grey: rgb(51, 51, 51);
+    --blue: rgb(82, 200, 246);
+    --yellow: rgb(255, 242, 0);
+    --orange: rgb(255, 106, 0);
+    --pink: rgb(250, 161, 161);
+    --kvacpurp: rgb(216, 97, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', monospace;
+    color: white;
+}
+
+body {
+    background: var(--dark-magenta);
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.paste-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 12px 12px 8px;
+    border-radius: 14px;
+    color: white;
+    border-style: none;
+    background-color: var(--dark);
+}
+
+.summary {
+    width: 700px;
+    height: 300px;
+    border-radius: 15px;
+    border: none;
+    padding: 15px;
+    background-color: var(--dark);
+    resize: vertical;
+    max-height: 500px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: darkgray;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.back-btn {
+    background-color: var(--dark);
+    padding: 10px;
+    border-style: none;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+}
+
+.back-btn:hover {
+    background-color: limegreen;
+}

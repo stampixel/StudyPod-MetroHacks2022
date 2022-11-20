@@ -1,0 +1,17 @@
+
+#ass-box{
+  padding-left: 10px;
+  font-size: 1vw;
+
+}
+
+
+.plus-button{
+  margin-top: 10px;
+background-color: #00ad60;
+  opacity: 80%;
+  border-radius: 16px;
+  font-size: 140%;
+
+  width: 10%;
+}

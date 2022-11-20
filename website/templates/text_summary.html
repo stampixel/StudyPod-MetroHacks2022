@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='text_summary.css') }}">
+    <title>Text Summary</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="app">
+        <div class="wrapper">
+            <div class="note-title">
+                <h4>Summary of: {{ note.title }}</h4>
+            </div>
+
+            <div class="summary">
+                <p>{{ summary }}</p>
+            </div>
+
+            <div class="bar"></div>
+
+            <a href="/main">
+                <button class="back-btn">Back</button>
+            </a>
+        </div>
+    </div>
+
+
+{% endblock %}

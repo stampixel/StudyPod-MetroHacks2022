@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <title>MAIN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="root">
+        <main>
+
+            <!-- TO DO LIST COLUMN -->
+            <div id="left-div">
+                <div class="left container">
+                    <div class="todo-app">
+                        <div class="todo">
+                            <h2>To do</h2>
+                            {% for tsk in user.checklist %}
+                                <div class="todo-item">
+                                    <a href="/delete/task/{{ tsk.id }} ">
+                                        <button class="delete-task-btn">X</button>
+                                    </a>
+                                    <p class="check-list-box">{{ tsk.content }}</p>
+                                </div>
+                            {% endfor %}
+
+                            <div class="add-todo">
+                                <div class="form">
+                                    <form method="POST">
+                                        <input type="text" name="add_task" id="add_task" placeholder="New Task...">
+                                        <button class="todo-btn" type="submit" name="add_task">Add New Task</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- CENTER NOTES -->
+            <div id="center-div">
+                <div class="middle container">
+                    <div class="app">
+                        {% for note in user.note %}
+                            <div class="snippet">
+                                <p class="snippet-title">{{ note.title }}</p>
+                                <a href="/{{ note.url_id }}">Click to share.</a>
+
+                                <div class="buttons">
+                                    <a href="/delete/note/{{ note.id }} ">
+                                        <button class="del-btn">Delete</button>
+                                    </a>
+                                    <a href="/edit/note/{{ note.id }}">
+                                        <button class="edit-btn">Edit</button>
+                                    </a>
+                                    <a href="/note/summary/{{ note.id }}">
+                                        <button class="edit-btn">Summarize Note</button>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="form">
+                            <form method="POST">
+                                <input class="add-snippet-button" type="submit" name="create_note" value="Create Note">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+            <div id="right-div">
+                <div class="right container">
+                    <div class="top container">
+                        <div class="video-player">
+                            <iframe id="ytplayer" type="text/html" width="350" height="250"
+                                    src="https://www.youtube.com/embed/jfKfPfyJRdk?&autoplay=1" frameborder="0" fs="0"
+                                    autoplay=1></iframe>
+                        </div>
+                    </div>
+                    <div class="top">
+                        <!-- TIMER HERE, IMPLEMENT LATER -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}
