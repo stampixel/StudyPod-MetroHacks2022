@@ -134,7 +134,7 @@ def note_summary(id):
         return render_template('text_summary.html', note=note_to_summarize, user=current_user,
                                summary=note_to_summarize.content)
     else:
-        YOUR_API_KEY = "ipyhx3RE2rMt8G1Ud2t4QyYTb6xvM0bq"
+        YOUR_API_KEY = "KEY GOES HERE"
 
         long_text = note_to_summarize.content
         long_text = ''.join([i if ord(i) < 128 else ' ' for i in long_text])
