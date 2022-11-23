@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, request, flash, url_for
+from flask import Blueprint, render_template, redirect, request, flash, url_for, abort
 from flask_login import login_required, current_user
 from . import db
 from website.models import Notes, User, Checklist
@@ -73,17 +73,20 @@ def edit_note():
 @login_required
 def update_note(id):
     note_to_update = Notes.query.get_or_404(id)
-    if request.method == 'POST':
-        note_to_update.content = request.form['paste_content']
+    if note_to_update.user_id == current_user.id:
+        if request.method == 'POST':
+            note_to_update.content = request.form['paste_content']
 
-        if request.form['title'] is not "":
-            note_to_update.title = request.form['title']
-        try:
-            db.session.commit()
-            return redirect('/')
-        except:
-            flash("An error has occurred!", category='error')
-    return render_template('note_updater.html', note=note_to_update, user=current_user)
+            if request.form['title'] is not "":
+                note_to_update.title = request.form['title']
+            try:
+                db.session.commit()
+                return redirect('/')
+            except:
+                flash("An error has occurred!", category='error')
+        return render_template('note_updater.html', note=note_to_update, user=current_user)
+    else:
+        abort(403, description="Resource not found.")
 
 
 # DELETING THE NOTE
